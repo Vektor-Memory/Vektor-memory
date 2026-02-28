@@ -1,7 +1,5 @@
 # VEKTOR - Persistent History for AI Agents
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4ZVX9gH_wkM?si=O3_RWTie4rdkzulK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 ## The Problem: Goldfish Memory in AI
 Most AI agents today suffer from a goldfish memory effect. Despite having massive context windows, their memory is ephemeral. When a session resets or the context window reaches its limit, the agent starts from zero. 
 
@@ -18,6 +16,8 @@ VEKTOR replaces flat vector storage with a structured, multi-layered memory arch
 
 By synthesizing published research into a local-first SQLite implementation, VEKTOR provides your agents with a cognitive architecture that maps relationships, not just keywords.
 
+### Video Overview and Demo
+[![VEKTOR Memory Technical Overview](https://img.youtube.com/vi/SshM_6U4uX4/maxresdefault.jpg)](https://www.youtube.com/watch?v=SshM_6U4uX4)
 ---
 
 ## Installation
