@@ -76,8 +76,4 @@ The VEKTOR engine is an original implementation of concepts established in peer-
 - Mem0 (arxiv:2504.19413): Memory curation and deduplication logic.
 
 ***
-
-### How to use this:
-1. **Header Placement:** The "Problem/Solution" section now sits at the very top. This is a "Executive Summary" that justifies the price of the software immediately.
-2. **The Metaphor:** It uses the "Goldfish" metaphor from your Substack but keeps the language professional and objective.
-3. **The Link:** You can add a link at the bottom: `For a deep dive into the philosophy of agentic memory, read our full thesis on Substack: https://vektormemory.substack.com/p/why-your-ai-agents-have-goldfish`
+For a deep dive into the philosophy of agentic memory, read our full thesis on Substack: https://vektormemory.substack.com/p/why-your-ai-agents-have-goldfish
