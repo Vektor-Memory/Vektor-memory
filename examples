@@ -1,0 +1,65 @@
+#### examples/groq-agent.js
+```javascript
+const VektorMemory = require('vektor-memory');
+
+const memory = new VektorMemory({
+  dbPath: './trading-bot.db',
+  llm: 'groq',
+  apiKey: process.env.GROQ_API_KEY,
+});
+
+async function run() {
+  await memory.seedCoreBlocks('trader-01', {
+    persona: 'I am a crypto trading assistant.',
+    human: 'User trades BTC with a 2% stop-loss.',
+    world: 'Current BTC dominance: 54%.',
+  });
+
+  await memory.write('trader-01', 'BTC is testing support at 92k.');
+  const ctx = await memory.recall('trader-01', 'Should I sell?');
+  
+  console.log('Context for LLM:', ctx.systemPrompt);
+}
+
+run();
+```
+
+#### examples/openai-agent.js
+```javascript
+const VektorMemory = require('vektor-memory');
+
+const memory = new VektorMemory({
+  dbPath: './support-bot.db',
+  llm: 'openai',
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+async function run() {
+  await memory.write('support-01', 'User prefers TypeScript over Python.');
+  
+  const ctx = await memory.recall('support-01', 'Which language should I recommend?');
+  console.log('System context:', ctx.systemPrompt);
+}
+
+run();
+```
+
+#### examples/ollama-agent.js
+```javascript
+const VektorMemory = require('vektor-memory');
+
+const memory = new VektorMemory({
+  dbPath: './local-bot.db',
+  llm: 'ollama',
+  model: 'llama3',
+});
+
+async function run() {
+  // Fully local: zero API cost, zero cloud data transfer
+  await memory.write('local-01', 'I am currently learning about graph databases.');
+  
+  const ctx = await memory.recall('local-01', 'What have I been learning?');
+  console.log('Local context retrieval:', ctx.systemPrompt);
+}
+
+run();
