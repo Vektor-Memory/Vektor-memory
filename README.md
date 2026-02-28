@@ -16,8 +16,9 @@ VEKTOR replaces flat vector storage with a structured, multi-layered memory arch
 
 By synthesizing published research into a local-first SQLite implementation, VEKTOR provides your agents with a cognitive architecture that maps relationships, not just keywords.
 
-### Video Overview and Demo
-[![VEKTOR Memory Technical Overview](https://img.youtube.com/vi/SshM_6U4uX4/maxresdefault.jpg)](https://www.youtube.com/watch?v=SshM_6U4uX4)
+### Video Overview 
+
+[![VEKTOR Memory Technical Overview](https://img.youtube.com/vi/SshM_6U4uX4/hqdefault.jpg)](https://www.youtube.com/watch?v=SshM_6U4uX4)
 ---
 
 ## Installation
