@@ -1,82 +1,119 @@
-# VEKTOR - Persistent History for AI Agents
+# vektor-slipstream
 
-## The Problem: Goldfish Memory in AI
-Most AI agents today suffer from a goldfish memory effect. Despite having massive context windows, their memory is ephemeral. When a session resets or the context window reaches its limit, the agent starts from zero. 
+Hardware-accelerated persistent memory for AI agents. Local-first. No cloud. One-time payment.
 
-Standard Retrieval-Augmented Generation (RAG) attempts to solve this with flat vector databases. However, flat RAG treats memory as a disconnected list of text snippets. It can find a specific fact through keyword similarity, but it lacks the ability to understand:
+[![npm](https://img.shields.io/npm/v/vektor-slipstream)](https://www.npmjs.com/package/vektor-slipstream)
+[![license](https://img.shields.io/badge/license-Commercial-blue)](https://vektormemory.com/product#pricing)
 
-- Temporal Sequence: What happened first, and what followed?
-- Causality: Why did a specific action lead to a certain outcome?
-- Entity Relationships: How do people, projects, and concepts interconnect over months of interaction?
-
-Without a structured history, an agent cannot develop a persona, learn user preferences, or execute long-term reasoning. It is forced to re-learn its world in every new session.
-
-## The Solution: A Cognitive Memory OS
-VEKTOR replaces flat vector storage with a structured, multi-layered memory architecture. Instead of just storing data, VEKTOR builds a persistent history for your agent that survives session restarts and grows more intelligent over time.
-
-By synthesizing published research into a local-first SQLite implementation, VEKTOR provides your agents with a cognitive architecture that maps relationships, not just keywords.
-
-### Video Overview 
-
-[![VEKTOR Memory Technical Overview](https://img.youtube.com/vi/SshM_6U4uX4/hqdefault.jpg)](https://www.youtube.com/watch?v=SshM_6U4uX4)
----
-
-## Installation
-
+## Install
 ```bash
-npm install vektor-memory better-sqlite3 sqlite-vec @xenova/transformers
+npm install vektor-slipstream
+npx vektor setup
 ```
 
 ## Quick Start
+```js
+const { createMemory } = require('vektor-slipstream');
 
-```javascript
-const VektorMemory = require('vektor-memory');
-
-const memory = new VektorMemory({
-  dbPath: './my-agent.db',
-  llm: 'groq',
-  apiKey: process.env.GROQ_API_KEY,
+const memory = await createMemory({
+  agentId:    'my-agent',
+  licenceKey: process.env.VEKTOR_LICENCE_KEY,
 });
 
-await memory.write('agent-1', 'BTC dropped 8% today. I accumulated.');
-const ctx = await memory.recall('agent-1', 'what should I do about BTC?');
+// Store a memory
+await memory.remember('User prefers TypeScript over JavaScript');
 
-// Inject ctx.systemPrompt into your LLM call
+// Recall by semantic similarity — avg 8ms, fully local
+const results = await memory.recall('coding preferences');
+// → [{ content, score, id }]
+
+// Traverse the graph
+const graph = await memory.graph('TypeScript', { hops: 2 });
+
+// What changed in 7 days?
+const delta = await memory.delta('project decisions', 7);
+
+// Morning briefing
+const brief = await memory.briefing();
 ```
 
-## Core Architecture
+## CLI
+```bash
+npx vektor setup       # First-run wizard — licence, hardware, integrations
+npx vektor activate    # Activate licence key on this machine
+npx vektor test        # Test memory engine with progress bar
+npx vektor status      # System health check
+npx vektor mcp         # Start Claude Desktop MCP server
+npx vektor rem         # Run REM dream cycle
+npx vektor help        # All commands
+```
 
-VEKTOR manages four concurrent memory graphs to solve the limitations of flat RAG:
+## What's Included
 
-- Semantic graph: Locates context through conceptual meaning rather than exact word matches.
-- Temporal graph: Maintains a chronological timeline of events to understand sequences.
-- Causal graph: Maps cause-and-effect chains, allowing agents to learn from past outcomes.
-- Entity graph: A persistent index of people, assets, and concepts across all interactions.
+### Memory Core (MAGMA)
+- 4-layer associative graph — semantic, causal, temporal, entity
+- AUDN curation loop — zero contradictions, zero duplicates
+- REM dream cycle — 7 phases, up to 50:1 compression
+- Sub-20ms recall — HNSW index, local SQLite
+- Local ONNX embeddings — $0 embedding cost, no API key required
 
-### Memory Lifecycle
-VEKTOR implements a three-tier lifecycle to manage information density:
-1. Raw Input: The verbatim log of interactions.
-2. MemScenes: Automated consolidation of related events into structured episodes.
-3. Core Blocks: Fixed identity and persona data that is always present in the context.
+### Integrations
+- **Claude MCP** — `vektor_recall`, `vektor_store`, `vektor_graph`, `vektor_delta`
+- **LangChain** — v1 + v2 adapter included
+- **OpenAI Agents SDK** — drop-in integration
+- **Mistral** — `vektor_memoire` HTTP tool, localhost bridge
+- **Gemini · Groq · Ollama** — provider agnostic
 
----
+### Cloak (Sovereign Identity)
+- `cloak_fetch` — stealth headless browser fetch
+- `cloak_render` — computed CSS · post-JS DOM sensor
+- `cloak_passport` — AES-256-GCM credential vault, machine-bound
+- `cloak_diff` — semantic diff since last fetch
+- `tokens_saved` — ROI audit per session
+```js
+const { cloak_passport, cloak_fetch, tokens_saved } = require('vektor-slipstream/cloak');
 
-## Why VEKTOR?
-VEKTOR is designed for developers who require high-performance memory without the overhead of cloud services or subscription costs.
+// Store credentials securely
+cloak_passport('GITHUB_TOKEN', 'ghp_xxxx');
+const token = cloak_passport('GITHUB_TOKEN');
 
-- Local-First: Runs entirely on your hardware via SQLite. No data leaves your server.
-- Model Agnostic: Compatible with Groq, OpenAI, Anthropic, and fully local Ollama setups.
-- Zero API Cost for Embeddings: Uses local transformers to generate vectors at 0ms latency and $0 cost.
-- Self-Editing: Agents can manage and update their own memory blocks dynamically.
+// Stealth browser fetch
+const { text, tokensSaved } = await cloak_fetch('https://example.com');
 
----
+// ROI audit
+const roi = tokens_saved({ raw_tokens: 10000, actual_tokens: 3000 });
+// → { reduction_pct: 70, cost_saved_usd: 0.0175, roi_multiple: 2.3 }
+```
 
-## Research Foundations
-The VEKTOR engine is an original implementation of concepts established in peer-reviewed research:
+## Performance
 
-- MAGMA (arxiv:2601.03236): Multi-level Attributed Graph Memory.
-- EverMemOS (arxiv:2601.02163): Persistent memory lifecycle management.
-- Mem0 (arxiv:2504.19413): Memory curation and deduplication logic.
+| Metric | Value |
+|--------|-------|
+| Recall latency | ~8ms avg (local SQLite) |
+| Embedding cost | $0 — fully local ONNX |
+| Embedding latency | ~10ms GPU / ~25ms CPU |
+| First run | ~2 min (downloads ~25MB model once) |
+| Subsequent boots | <100ms |
 
-***
-For a deep dive into the philosophy of agentic memory, read our full thesis on Substack: https://vektormemory.substack.com/p/why-your-ai-agents-have-goldfish
+## Hardware Auto-Detection
+
+Zero config. VEKTOR detects and uses the best available accelerator:
+- **NVIDIA CUDA** — GPU acceleration
+- **Apple Silicon** — CoreML
+- **CPU** — optimised fallback, works everywhere
+
+## Licence
+
+Commercial licence. One-time payment of $159.  
+Activates on up to 3 machines. Manage at [polar.sh](https://polar.sh).
+
+Purchase: [vektormemory.com/product#pricing](https://vektormemory.com/product#pricing)  
+Docs: [vektormemory.com/docs](https://vektormemory.com/docs)  
+Support: hello@vektormemory.com
+
+## Research
+
+Built on peer-reviewed research:
+- [MAGMA (arxiv:2601.03236)](https://arxiv.org/abs/2601.03236) — Multi-Graph Agentic Memory Architecture
+- [EverMemOS (arxiv:2601.02163)](https://arxiv.org/abs/2601.02162) — Self-Organizing Memory OS
+- [Mem0 (arxiv:2504.19413)](https://arxiv.org/abs/2504.19413) — Production-Ready Agent Memory
