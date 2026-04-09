@@ -1,5 +1,5 @@
 # vektor-slipstream
-The associative persistent Magma memory 4 layers for AI agents. Local-first. No cloud. One-time payment. Cli. D3 Graph. Ollama. Claude. Cloak Stealth Browser.
+The associative persistent Magma memory 4 layers for AI agents. Local-first. No cloud. One-time payment. Cli. D3 Graph. Ollama. 28 MCP tools for Claude. Cloak Stealth Browser.
 
 [![npm](https://img.shields.io/npm/v/vektor-slipstream)](https://www.npmjs.com/package/vektor-slipstream)
 [![downloads](https://img.shields.io/npm/dw/vektor-slipstream)](https://www.npmjs.com/package/vektor-slipstream)
