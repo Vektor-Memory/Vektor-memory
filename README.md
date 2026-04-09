@@ -1,5 +1,11 @@
 # vektor-slipstream
 
+<img width="1918" height="944" alt="Vektor Graph" src="https://github.com/user-attachments/assets/e59d16e0-a1de-4f82-a21c-9a1fed09bafc" />
+<img width="1919" height="942" alt="Vektor Health" src="https://github.com/user-attachments/assets/100906f3-828e-4f32-b2e4-ee59fb9cf9db" />
+<img width="1919" height="941" alt="Vektor Config" src="https://github.com/user-attachments/assets/474960b8-8d68-4c5e-a500-feb0d7932480" />
+<img width="1086" height="707" alt="Vektor Cli" src="https://github.com/user-attachments/assets/401e42f6-4ef0-4b46-adda-7efbdb9c26f0" />
+<img width="1084" height="578" alt="Vektor Cli-2" src="https://github.com/user-attachments/assets/e3cea149-82f2-4dee-ac8a-9e29e2a283fd" />
+
 The associative memory layer for AI agents. Local-first. No cloud. One-time payment.
 
 [![npm](https://img.shields.io/npm/v/vektor-slipstream)](https://www.npmjs.com/package/vektor-slipstream)
