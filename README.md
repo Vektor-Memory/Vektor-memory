@@ -492,7 +492,7 @@ Run after updating from v1.2.x or earlier, or migration runs automatically on st
 npx vektor migrate
 ```
 
-New in v1.3.7+:
+New in v1.4.6+:
 - `memories.pinned` — pin protection for REM cycle
 - `memories.namespace` — project scoping
 - `memories.updated_at` — change tracking
