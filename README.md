@@ -1,5 +1,5 @@
 # vektor-slipstream
-The associative memory layer for AI agents. Local-first. No cloud. One-time payment.
+The associative persistent Magma memory 4 layers for AI agents. Local-first. No cloud. One-time payment.
 
 [![npm](https://img.shields.io/npm/v/vektor-slipstream)](https://www.npmjs.com/package/vektor-slipstream)
 [![downloads](https://img.shields.io/npm/dw/vektor-slipstream)](https://www.npmjs.com/package/vektor-slipstream)
