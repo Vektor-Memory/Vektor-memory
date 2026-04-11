@@ -1,3 +1,4 @@
+
 # vektor-slipstream
 
 Hardware-accelerated persistent memory for AI agents. Local-first. No cloud. One-time payment.
@@ -5,7 +6,11 @@ Hardware-accelerated persistent memory for AI agents. Local-first. No cloud. One
 [![npm](https://img.shields.io/npm/v/vektor-slipstream)](https://www.npmjs.com/package/vektor-slipstream)
 [![downloads](https://img.shields.io/npm/dw/vektor-slipstream)](https://www.npmjs.com/package/vektor-slipstream)
 [![license](https://img.shields.io/badge/license-Commercial-blue)](https://vektormemory.com/product#pricing)
-
+<img width="1919" height="942" alt="Vektor Health" src="https://github.com/user-attachments/assets/cf195a81-1f9a-4151-80d1-e7611877d03f" />
+<img width="1919" height="941" alt="Vektor Config" src="https://github.com/user-attachments/assets/faa3ccb2-844e-45c2-821e-78ce2177a397" />
+<img width="1086" height="707" alt="Vektor Cli" src="https://github.com/user-attachments/assets/03654ee5-4d87-4882-b7e9-8ab788275a45" />
+<img width="1084" height="578" alt="Vektor Cli-2" src="https://github.com/user-attachments/assets/eac22042-5d57-40b1-aa92-e4f0bcfcc96d" />
+<img width="1918" height="944" alt="Vektor Graph" src="https://github.com/user-attachments/assets/9b27992d-9d20-4ff3-b2ba-2e228a248f8b" />
 ## Install
 
 ```bash
