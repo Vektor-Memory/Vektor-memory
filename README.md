@@ -62,7 +62,7 @@ npx vektor chat --provider gemini
 npx vektor chat --provider openai
 ```
 <img width="1086" height="707" alt="Vektor Cli" src="https://github.com/user-attachments/assets/03654ee5-4d87-4882-b7e9-8ab788275a45" />
-<img width="1084" height="578" alt="Vektor Cli-2" src="https://github.com/user-attachments/assets/eac22042-5d57-40b1-aa92-e4f0bcfcc96d" />
+
 ### Providers
 
 | Provider | Details |
@@ -140,7 +140,7 @@ npx vektor ask        # Query memory + LLM answer
 npx vektor agent      # Autonomous goal executor
 npx vektor help       # All commands
 ```
-
+<img width="1084" height="578" alt="Vektor Cli-2" src="https://github.com/user-attachments/assets/eac22042-5d57-40b1-aa92-e4f0bcfcc96d" />
 ---
 
 ## Claude Desktop Extension (DXT)
