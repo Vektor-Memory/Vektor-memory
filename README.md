@@ -250,11 +250,11 @@ Add to `.claude/settings.json` in your project:
 ```
 
 All 28 tools are available in Claude Code via this config.
-<img width="1919" height="941" alt="Vektor Config" src="https://github.com/user-attachments/assets/faa3ccb2-844e-45c2-821e-78ce2177a397" />
+
 ---
 
 ## What's Included
-
+<img width="1919" height="941" alt="Vektor Config" src="https://github.com/user-attachments/assets/faa3ccb2-844e-45c2-821e-78ce2177a397" />
 ### Memory Core (MAGMA)
 
 - 4-layer associative graph — semantic, causal, temporal, entity
