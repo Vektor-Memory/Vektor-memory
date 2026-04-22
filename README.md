@@ -6,7 +6,7 @@ Hardware-accelerated persistent memory for AI agents. Local-first. No cloud. One
 [![downloads](https://img.shields.io/npm/dw/vektor-slipstream)](https://www.npmjs.com/package/vektor-slipstream)
 [![license](https://img.shields.io/badge/license-Commercial-blue)](https://vektormemory.com/product#pricing)
 
-**66.9% on LoCoMo benchmark (adjusted). Beats Mem0. Under 1ms retrieval. Zero cloud dependency.**
+**66.9% on LoCoMo benchmark (adjusted). Under 1ms retrieval. Zero cloud dependency.**
 
 ---
 
