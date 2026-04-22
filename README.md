@@ -73,7 +73,7 @@ const stats = memory.graphStats();
 | Single-hop | 51.6% |
 | **Adjusted total** | **66.9%** |
 
-Beats Mem0 old algorithm (62.47%) at under 1ms retrieval latency with zero cloud API calls at query time.
+#Under 1ms retrieval latency with zero cloud API calls at query time.
 
 ---
 
