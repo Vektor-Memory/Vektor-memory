@@ -371,8 +371,12 @@ Zero config. VEKTOR detects and uses the best available accelerator:
 
 ## Licence
 
-Commercial licence. One-time payment of $159. Activates on up to 3 machines.
-Manage at [polar.sh](https://polar.sh).
+Commercial licence granted. 
+Monthly fee - all updates imcluded
+Solo $9/mo → 3 licences
+Team $35/mo →  5 licences
+Studio $59/mo →  10 licences
+Enterprise $99/mo →  25 licences
 
 Purchase: [vektormemory.com/product#pricing](https://vektormemory.com/product#pricing)
 Docs: [vektormemory.com/docs](https://vektormemory.com/docs)
