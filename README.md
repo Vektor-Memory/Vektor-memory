@@ -372,7 +372,8 @@ Zero config. VEKTOR detects and uses the best available accelerator:
 ## Licence
 
 Commercial licence granted. 
-Monthly fee - all updates imcluded
+Monthly fee - all updates included
+
 Solo $9/mo → 3 licences
 Team $35/mo →  5 licences
 Studio $59/mo →  10 licences
