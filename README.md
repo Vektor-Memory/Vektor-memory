@@ -17,6 +17,8 @@
 
 ---
 
+<img width="1877" height="738" alt="image" src="https://github.com/user-attachments/assets/f2227b0e-0712-4151-bd82-af5314f43302" />
+
 ## VEKTOR fixes the architecture. Not the prompt.
 
 Open any AI developer forum right now. Reddit, Discord, the Facebook groups full of people who bought a course six months ago. Two posts rotate in an endless loop.
