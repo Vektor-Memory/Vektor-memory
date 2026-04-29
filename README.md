@@ -179,7 +179,6 @@ The same task with a monolithic system prompt and history reconstruction: 15,000
 | Embedding cost | $0 -- fully local ONNX |
 | Embedding latency | ~10ms GPU / ~25ms CPU |
 | LoCoMo benchmark | 66.9% adjusted judge accuracy |
-| vs Mem0 | beats Mem0 baseline (62.47%) |
 | Min tokens for full recall | 250 |
 | Max tokens regardless of DB size | 4,000 |
 | First run | ~2 min (downloads ~25MB model once) |
