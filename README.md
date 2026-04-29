@@ -54,18 +54,18 @@ Add more guardrails   ──►  Longer prompts                   ──►  Mor
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
-│   DXT       drag-and-drop install · 44 tools registered    │
-│             automatically · no JSON editing                  │
+│   DXT       drag-and-drop install · 44 tools registered     │
+│             automatically · no JSON editing                 |  
 │                                                             │
-│   MCP       stateless on-demand tool invocation            │
+│   MCP       stateless on-demand tool invocation             │
 │             no persistent process between runs              │
 │             agent wakes, works, terminates cleanly          │
 │                                                             │
-│   Skill     ~150 tokens of scoped context injected         │
-│   Files     only when relevant · unloaded when done        │
+│   Skill     ~150 tokens of scoped context injected          │
+│   Files     only when relevant · unloaded when done         │
 │             90% less context overhead per session           │
 │                                                             │
-│   VEKTOR ◄─ persistent memory graph · BM25 + vector RRF   │
+│   VEKTOR ◄─ persistent memory graph · BM25 + vector RRF     │
 │             recall · self-organising intelligence layer     │
 │             state that actually survives between sessions   │
 │                                                             │
