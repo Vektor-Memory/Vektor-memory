@@ -17,7 +17,8 @@
 
 ---
 
-<img width="1877" height="738" alt="image" src="https://github.com/user-attachments/assets/f2227b0e-0712-4151-bd82-af5314f43302" />
+<img width="1877" height="738" alt="banner1" src="https://github.com/user-attachments/assets/2011f985-a584-4c28-aa0f-08c786edd109" />
+
 
 ## VEKTOR fixes the architecture. Not the prompt.
 
