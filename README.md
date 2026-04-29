@@ -17,7 +17,7 @@
 
 ---
 
-## The Problem
+## VEKTOR fixes the architecture. Not the prompt.
 
 Open any AI developer forum right now. Reddit, Discord, the Facebook groups full of people who bought a course six months ago. Two posts rotate in an endless loop.
 
@@ -43,7 +43,6 @@ Add more guardrails   ──►  Longer prompts                   ──►  Mor
 
 > **The control paradox:** the more control you try to add through prompts, the more expensive and fragile the system becomes. You end up spending more time fixing the automation than the automation saves.
 
-VEKTOR fixes the architecture. Not the prompt.
 
 ---
 
