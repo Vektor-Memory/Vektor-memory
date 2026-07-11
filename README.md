@@ -5,7 +5,7 @@
 ### Vector memory for agentic AI. Local-first. Private. Soveriegn.
 [![Longmemeeval benchmark](https://img.shields.io/badge/longmemeval-81%25-854F0B?style=flat-square)](https://arxiv.org/abs/2605.12493)
 [![LoCoMo benchmark](https://img.shields.io/badge/LoCoMo-66.9%25-854F0B?style=flat-square)](https://arxiv.org/abs/2402.17753)
-[![recall latency](https://img.shields.io/badge/recall-sub--8ms-0F6E56?style=flat-square)](#performance)
+[![recall latency](https://img.shields.io/badge/recall-sub--28ms-0F6E56?style=flat-square)](#performance)
 [![license](https://img.shields.io/badge/license-Commercial-533AB7?style=flat-square)](https://vektormemory.com/product#pricing)
 [![MCP tools](https://img.shields.io/badge/MCP_tools-50+-185FA5?style=flat-square)](#mcp-tools)
 
@@ -95,7 +95,7 @@ const memory = await createMemory({
 // Store a memory
 await memory.remember('User prefers TypeScript. Deployed to prod on Friday.');
 
-// Recall by semantic similarity -- sub-8ms, fully local
+// Recall by semantic similarity -- sub-28ms, fully local
 const results = await memory.recall('deployment preferences', 5);
 // → [{ content, score, id, timestamp }]
 
@@ -168,7 +168,7 @@ The same task with a monolithic system prompt and history reconstruction: 15,000
 
 | Metric | Value |
 |---|---|
-| Recall latency | sub-8ms (local SQLite + ONNX) |
+| Recall latency | sub-28ms (local SQLite + ONNX) |
 | Embedding cost | $0 -- fully local ONNX |
 | Embedding latency | ~10ms GPU / ~25ms CPU |
 | Longmemeval benchmark | 81% accuracy |
@@ -385,7 +385,7 @@ Add to `.claude/settings.json` in your project:
 - Foresight extraction -- future-tense statements stored with temporal metadata
 - ADD-only contradiction detection -- full history preserved, no silent overwrites
 - REM dream cycle -- up to 50:1 memory compression
-- Sub-8ms recall -- local SQLite, no network required
+- Sub-28ms recall -- local SQLite, no network required
 - Local ONNX embeddings -- $0 embedding cost, no API key required
 
 ### Intelligence Layer (runs automatically, no config)
