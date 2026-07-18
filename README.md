@@ -479,6 +479,9 @@ Fixed the silver theme’s background layering, where the card surface colour wa
 
 PREVIEW — Install: npm install -g ./vektor-slipstream-1.7.8-preview.tgz
 Upgrade from v1.7.7 or v1.7.6 at any time. Download →
+
+---
+
 v1.7.7
 PREVIEW
 12 Jul 2026 — Sentinel Proactive Memory Injection · Faraday Independent Watchdog · Tamper-Evident Audit Log · Supersession Fix · Early Access
