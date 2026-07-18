@@ -462,56 +462,43 @@ Built on peer-reviewed research:
 
 ## What's New in the Changelog:
 
+v1.7.8
+PREVIEW
+16 Jul 2026 — Catch-up Brief Deterministic Grounding · Reasoning-Model Tool-Call Fix · Floating Desk Toolbar · Cross-Theme Colour Consistency
+Catch-up Brief — Deterministic Memory Grounding
+The catch-up brief previously left it up to whichever model was selected to decide whether to search memory before answering — strong tool-callers mostly stayed grounded, but weaker/local models frequently skipped retrieval and padded the answer with plausible-sounding invention. Retrieval now runs server-side first, always, via a fixed set of memory queries covering focus/decisions/open-questions/recent-notes, merged into one context block. The model receives a strict section template plus an explicit instruction to only state what's in that context, writing “Nothing new this week” for empty sections instead of inventing content. Output is now consistent across providers, including smaller local models, and is inherently self-updating since it re-queries live memory on every request.
 
-**v1.5.9** · 21 May 2026
-- PM2 environment variable handling fixed for consistent download versioning
-- `better-sqlite3` bundled with Windows binary (no rebuild required on install)
-- `sqlite-vec` upgraded to v0.1.9 with ANN recall (60% p95 latency reduction on large graphs)
-- New MCP tools: `vektor_status` (health checks), `vektor_related` (memory graph traversal)
-- Bug fixes: Percept topic matching threshold, `vektor rem` CLI (was calling removed `dream()` method), GUI API proxy routes for non-default ports
+Bug Fix — Reasoning-Model Tool Calls (Luna, Terra, Sol & o-series)
+The new gpt-5.6 family models added in v1.7.7 (Luna, Terra, Sol) plus other o-series/gpt-5-family models failed every DESK tool-calling request with Function tools with reasoning_effort are not supported. Simply omitting reasoning_effort wasn’t enough — these models still apply their own default server-side, which conflicts with function tools on /v1/chat/completions. Fixed by explicitly sending reasoning_effort: 'none' whenever a reasoning-family model is in play, since this code path always sends tools.
 
-**v1.5.8** · 13 May 2026
-- Expanded integrations to 21 documented providers: LiteLLM, LM Studio, NVIDIA NIM, MiniMax, DeepSeek, xAI/Grok, Together AI, Cohere, Perplexity (and 12 others)
-- Percept Chat Layer added: morning handover, progressive idea surfacing, step tracking, web signal alerts
-- Percept Inbox Daemon: auto-processes `.txt/.md/.json` files into MAGMA memory without user action
-- Bug fixes: sovereign-layer blocking legitimate writes (removed `override` from risk tokens), `importance` options being silently dropped on store calls
+Desk Toolbar — Floating Frosted Panel
+The bottom input bar (formatting row, model picker, THINK/COLLAB/JOT) is now a floating translucent panel with backdrop blur and rounded corners on all sides, inset from the window edge, instead of a flat opaque bar flush to the bottom.
 
-**v1.5.0** · 24 April 2026
-- Memory graph exposure: `vektor_related` traverses Zettelkasten links and MAGMA co-occurrence edges
-- Auto-briefing on first recall: compact digest of recent stores, open decisions, priorities inline
-- SSH deployment tools (CLOAK): `cloak_ssh_exec`, `cloak_ssh_plan`, `cloak_ssh_approve`, `cloak_ssh_rollback`
-- DXT extension: single-file Claude Desktop drag-and-drop install, no manual JSON config
+Cross-Theme Colour Consistency
+Fixed the silver theme’s background layering, where the card surface colour was identical to the page background (no visible depth) and the next step jumped straight to a harshly dark hover state. Standardised the quick-action toolbar, send buttons, and sidebar navigation highlighting to draw from the same theme accent variables instead of one-off hardcoded colours, and gave graph “Semantic” nodes a fixed, theme-independent colour so they stay visible against every theme instead of fading to near-white.
 
-**v1.4.0** · 14 April 2026
-- Intelligence modules: Axon (associative recall), Cerebellum (procedural memory), Cortex (metacognitive monitor), AUDN audit log
-- Namespace isolation: full multi-namespace support with bulk rename/merge/export/delete operations
-- Boot order determinism: `boot-patch.js` applies migrations, warms embeddings, validates schema before first tool call
+PREVIEW — Install: npm install -g ./vektor-slipstream-1.7.8-preview.tgz
+Upgrade from v1.7.7 or v1.7.6 at any time. Download →
+v1.7.7
+PREVIEW
+12 Jul 2026 — Sentinel Proactive Memory Injection · Faraday Independent Watchdog · Tamper-Evident Audit Log · Supersession Fix · Early Access
+Sentinel — Selective Proactive Memory Injection
+New module wired into both DESK and JOT chat paths. Adds a proactive push on top of VEKTOR’s existing pull-based recall: on each turn, before the LLM call, checks whether a stored memory is relevant enough to the current message to surface unprompted. A live task-completion aid — does not affect LongMemEval/LoCoMo-style benchmark scores, which are pull-based QA. Three layers: a core gate with per-agent adaptive threshold and cooldown, integrity gating that re-verifies the candidate against the DB right before injection (follows the supersession chain to its active tip, rejects expired rows), and an opt-in self-questioning pass that judges relevance with one extra LLM call. Counterfactual threshold calibration available via CLI (node vektor-sentinel.js calibrate|feedback|stats).
 
-**v1.3.7** · 5 April 2026
-- Memory management: pin/forget operations, detailed memory inspector, on-demand briefing engine, cross-device export/import
-- CLOAK behaviour patterns: self-improving pattern store with Bronze/Silver/Gold tier promotion, auto-recorder snippet
-- Full TypeScript types coverage for all public APIs
-- 13 security fixes across schema guards, aggregation wrapping, bulk deletes, export checksums
+Model Catalog Refresh
+Gemini updated to Gemini 3.5 Flash. xAI updated to Grok 4.5. OpenAI additions Luna, Terra, and Sol are now live.
 
-**v1.2.0** · 24 March 2026
-- Hybrid recall: BM25 keyword search + vector similarity fused via Reciprocal Rank Fusion (RRF)
-- Session ingestion: auto-extract facts and decisions from conversation transcripts with `anticipated_queries`
-- Confidence scoring, contradiction detection, near-duplicate deduplication
-- Memory versioning: `supersedes_id` for atomic fact updates with full revision chains
+Bug Fixes — Supersession & Data Integrity
+Fixed the root cause of supersession never firing in production: three stacked score-scale bugs (Layer 6 reranking, RRF fusion, cross-encoder reranking) each overwrote the recall score with a progressively less-comparable value before the dedup threshold check ever saw it. The true raw cosine similarity is now captured at the point it’s computed and threaded through every later stage. Also fixed a NULL id bug affecting every fresh memory on Windows (an explicit id is now generated before insert, rather than relying on SQLite’s unrelated internal rowid), and fixed supersession silently reporting success even when the LLM-verified conflict-resolution gate had actually declined the write.
 
-**v1.1.0** · 11 March 2026
-- Namespace isolation: separate memory silos per agent/project with cross-namespace opt-in lookup
-- Knowledge graph server: interactive force-directed visualisation of memory as nodes + Zettelkasten edges
-- Morning briefing scheduler: cron-style generation with sections for recent, decisions, reminders, conflicts
-- Sleep consolidation: offline re-embedding, TTL pruning, BM25 index rebuild during idle periods
-- Zettelkasten self-organisation: LLM-driven tagging, importance weights, link suggestions
+Faraday — Independent Integrity Watchdog & Tamper-Evident Audit Log
+New standalone watchdog process runs continuously via OS task scheduling, independent of any active Faraday MCP session, watching AI-assistant MCP configuration files across seven clients plus Faraday’s own core enforcement files. Every gate event now also carries a chained hash linking it to the previous event, so altering, deleting, or reordering a historical entry breaks every hash after it, detectably.
 
-**v1.0.0** · 27 February 2026
-- Initial release: persistent local memory for AI agents via SQLite + `sqlite-vec`
-- MCP server: `vektor_store`, `vektor_recall`, `vektor_delta`, `tokens_saved` tools
-- CLI/TUI: setup, doctor, recall, store, export, import commands with interactive REPL
-- Portable JSON export + in-place schema migrations
-- Licence enforcement via ByteNode, zero telemetry
+Other Fixes
+Faraday corpus auto-update now actually extracts the verified archive. Faraday status display no longer shows a corrupted glyph for session state. JOT flashcards copy button and collab-panel CSS fixed. Packaging cleaned up further (missing files added to the npm allowlist), and a long-standing display-glyph corruption pattern was cleared from 16 additional files across the SDK.
+
+PREVIEW — Install: npm install -g ./vektor-slipstream-1.7.7-preview.tgz
+Upgrade from v1.7.6 at any time. Download →
 
 ---
 
