@@ -2,7 +2,7 @@
 
 # VEKTOR MEMORY - Slipstream
 
-### Vector memory for agentic AI. Local-first. Private. Soveriegn.
+### Vector memory for agentic AI. Local-first. Privacy Enhanced Technology. Data Sovereignty.
 [![Longmemeeval benchmark](https://img.shields.io/badge/longmemeval-81%25-854F0B?style=flat-square)](https://arxiv.org/abs/2605.12493)
 [![LoCoMo benchmark](https://img.shields.io/badge/LoCoMo-66.9%25-854F0B?style=flat-square)](https://arxiv.org/abs/2402.17753)
 [![recall latency](https://img.shields.io/badge/recall-sub--28ms-0F6E56?style=flat-square)](#performance)
