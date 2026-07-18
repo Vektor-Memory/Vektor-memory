@@ -182,11 +182,14 @@ The same task with a monolithic system prompt and history reconstruction: 15,000
 
 | Category | Accuracy |
 |---|---|
-| Multi-hop | 79.1% |
-| Adversarial | 70.4% |
-| Single-hop | 51.6% |
-| Temporal | 46.2% |
-| **Adjusted total** | **66.9%** |
+| Abstention | 100% |
+| Single-session assistant | 93.3% |
+| Multi-session | 80.0% |
+| Single-session user| 80.0%|
+| Single-session preference| 80.0%|
+| Knowledge updates| 73.3%|
+| Temporal reasoning| 66.7%|
+| **Adjusted total** | **81%** |
 
 ---
 
