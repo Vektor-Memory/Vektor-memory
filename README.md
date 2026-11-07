@@ -81,7 +81,7 @@ npm install -g vektor-slipstream
 vektor setup
 ```
 
-Or drag `vektor-slipstream.dxt` directly into Claude Desktop. All 50+ tools register automatically. No JSON editing. No path configuration.
+Or drag `vektor-slipstream.dxt` directly into Claude Desktop. All 60+ tools register automatically. No JSON editing. No path configuration.
 
 ---
 
