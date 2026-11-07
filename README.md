@@ -2,7 +2,7 @@
 
 # VEKTOR MEMORY - Slipstream
 
-##600+ models BYOK · 60+ MCP tools · Ollama Local & Cloud ·
+## 600+ models BYOK · 60+ MCP tools · Ollama Local & Cloud ·
 Novel Technology · Privacy Enhanced · Data Sovereignty
 [![Longmemeeval benchmark](https://img.shields.io/badge/longmemeval-84%25-854F0B?style=flat-square)](https://arxiv.org/abs/2605.12493)
 [![LoCoMo benchmark](https://img.shields.io/badge/LoCoMo-66.9%25-854F0B?style=flat-square)](https://arxiv.org/abs/2402.17753)
