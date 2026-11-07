@@ -177,7 +177,7 @@ The same task with a monolithic system prompt and history reconstruction: 15,000
 | LoCoMo benchmark | 66.9% adjusted judge accuracy |
 | Min tokens for full recall | 250 |
 | Max tokens regardless of DB size | 4,000 |
-| First run | ~2 min (downloads ~25MB model once) |
+| First run | ~2 min (downloads ~38MB model once) |
 | Subsequent boots | <100ms |
 
 **LongMemEval benchmark results
