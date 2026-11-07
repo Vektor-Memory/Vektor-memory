@@ -179,18 +179,10 @@ The same task with a monolithic system prompt and history reconstruction: 15,000
 | First run | ~2 min (downloads ~25MB model once) |
 | Subsequent boots | <100ms |
 
-**LoCoMo benchmark results
+**LongMemEval benchmark results
 
-| Category | Accuracy |
-|---|---|
-| Abstention | 100% |
-| Single-session assistant | 93.3% |
-| Multi-session | 80.0% |
-| Single-session user| 80.0%|
-| Single-session preference| 80.0%|
-| Knowledge updates| 73.3%|
-| Temporal reasoning| 66.7%|
-| **Adjusted total** | **81%** |
+
+| **Adjusted total** | **84%** |
 
 ---
 
