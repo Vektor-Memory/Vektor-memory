@@ -203,7 +203,7 @@ npx vektor chat --provider gemini
 | `ollama` | Default -- free, local, no API key. Auto-detects best model. |
 | `claude` | Anthropic Claude -- set `ANTHROPIC_API_KEY` |
 | `openai` | OpenAI GPT -- set `OPENAI_API_KEY` |
-| `groq` | Groq LLaMA -- set `GROQ_API_KEY` (free tier available) |
+| `groq`   | Groq LLaMA -- set `GROQ_API_KEY` (free tier available) |
 | `gemini` | Google Gemini -- set `GEMINI_API_KEY` |
 
 **In-chat commands:**
@@ -245,13 +245,13 @@ Once installed, Claude automatically:
 - Stores facts and decisions during conversation
 - Summarises and consolidates at session end
 
-All 50+ tools available. No configuration beyond your licence key.
+All 60+ MCP tools available. 
 
 Download: [vektormemory.com/docs/dxt](https://vektormemory.com/docs/dxt)
 
 ---
 
-## MCP Tools -- 50+ 
+## MCP Tools -- 60+ 
 
 ### Memory
 
@@ -267,7 +267,7 @@ Download: [vektormemory.com/docs/dxt](https://vektormemory.com/docs/dxt)
 | `vektor_stats` | Memory DB stats -- node count, edges, entities |
 | `vektor_timeline` | Query memories by date range |
 
-### Cloak -- Stealth Browser, SSH, Fetch
+### Cloak -- Browser, SSH, Fetch
 
 | Tool | Function |
 |---|---|
